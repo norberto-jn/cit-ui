@@ -3,25 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start:dev": "PORT=3545 next dev -H 0.0.0.0",
+    "start:build": "next build",
+    "start:start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/md5": "^2.3.5",
+    "antd": "^5.24.4",
+    "axios": "^1.8.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "lucide-react": "^0.483.0",
+    "md5": "^2.3.0",
+    "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "react-router-dom": "^7.3.0",
+    "react-spinners": "^0.15.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

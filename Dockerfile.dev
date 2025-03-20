@@ -1,0 +1,7 @@
+FROM node:18.19.1-alpine3.18
+
+WORKDIR /usr/src/workspace/cit-ui
+
+CMD [ -d "node_modules" ] && npm run start:dev || npm i && npm run start:dev
+
+EXPOSE 3545

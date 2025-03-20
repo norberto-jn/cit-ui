@@ -1,0 +1,20 @@
+{
+  "explorer.fileNesting.enabled": false,
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "default",
+  "explorer.autoReveal": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.baseUrl": "./src",
+  "javascript.baseUrl": "./src",
+  "typescript.include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "javascript.include": [
+    "src/**/*.js",
+    "src/**/*.jsx"
+  ]
+}
