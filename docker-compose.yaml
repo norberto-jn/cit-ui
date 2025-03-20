@@ -1,0 +1,48 @@
+version : '3'
+
+networks:
+  cit-network:
+    driver: bridge
+
+services :
+
+  cit-postgres:
+    image: postgres:15
+    container_name: cit-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "5411:5432"
+    networks:
+      - cit-network
+
+  cit-api:
+    build:
+      context: ./cit-api
+      dockerfile: Dockerfile.dev
+    container_name: cit-api
+    restart: always
+    volumes:
+      - ./cit-api/:/usr/src/workspace/cit-api
+    ports:
+      - 3541:3541
+    depends_on:
+      - cit-postgres
+    networks:
+      - cit-network
+
+  cit-ui :
+    build:
+      context: ./cit-ui
+      dockerfile: Dockerfile.dev
+    container_name: cit-ui
+    restart: always
+    volumes:
+      - ./cit-ui/:/usr/src/workspace/cit-ui
+    ports:
+      - 3545:3545
